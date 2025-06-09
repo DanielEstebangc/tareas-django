@@ -8,7 +8,6 @@ urlpatterns = [
     path('crear/', views.crear_tarea, name='crear_tarea'),
     path('editar/<int:pk>/', views.editar_tarea, name='editar_tarea'),
     path('eliminar/<int:pk>/', views.eliminar_tarea, name='eliminar_tarea'),
-    path('crear-superusuario/', crear_superusuario),
 
 
 ]

@@ -35,9 +35,3 @@ def eliminar_tarea(request, pk):
         return redirect('lista_tareas')
     return render(request, 'tareas/eliminar.html', {'tarea': tarea})
 
-def crear_superusuario(request):
-    if not User.objects.filter(username='admin').exists():
-        User.objects.create_superuser('admin', 'admin@example.com', 'admin123')
-        return HttpResponse("✅ Superusuario creado: admin / admin123")
-    else:
-        return HttpResponse("⚠️ Ya existe un superusuario con ese nombre.")
