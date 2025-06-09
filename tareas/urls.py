@@ -1,6 +1,5 @@
 from django.urls import path
 from . import views
-from tareas.views import crear_superusuario
 
 
 urlpatterns = [
