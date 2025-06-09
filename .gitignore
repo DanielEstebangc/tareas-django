@@ -1,0 +1,13 @@
+# Entorno virtual: carpeta donde tienes las librerías de Python instaladas
+venv/
+.env
+
+# Archivos temporales de Python que no necesitamos subir
+*.pyc
+__pycache__/
+
+# Archivo de base de datos local que usaste para pruebas
+db.sqlite3
+
+# Carpeta de archivos estáticos de producción que genera Django (se generan de nuevo en producción)
+staticfiles/

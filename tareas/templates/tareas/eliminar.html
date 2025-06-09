@@ -1,0 +1,7 @@
+<!-- tareas/templates/tareas/eliminar.html -->
+<h2>¿Estás seguro de que deseas eliminar "{{ tarea.nombre }}"?</h2>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Sí, eliminar</button>
+    <a href="{% url 'lista_tareas' %}">Cancelar</a>
+</form>
