@@ -1,6 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Tarea
 from .forms import TareaForm
+from django.contrib.auth.models import User
+from django.http import HttpResponse
+
+
 
 def lista_tareas(request):
     tareas = Tarea.objects.all()
@@ -30,3 +34,10 @@ def eliminar_tarea(request, pk):
         tarea.delete()
         return redirect('lista_tareas')
     return render(request, 'tareas/eliminar.html', {'tarea': tarea})
+
+def crear_superusuario(request):
+    if not User.objects.filter(username='admin').exists():
+        User.objects.create_superuser('admin', 'admin@example.com', 'admin123')
+        return HttpResponse("✅ Superusuario creado: admin / admin123")
+    else:
+        return HttpResponse("⚠️ Ya existe un superusuario con ese nombre.")
